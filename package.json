@@ -16,7 +16,7 @@
     "build:css": "sass src/main.scss > dist/main.css && npm run postbuild:css",
     "build:html": "pug -P src/pug/ -o dist/",
     "build": "npm run clean && npm-run-all -p build:*",
-    "connect": "http-server -a localhost -p 8080 dist/ -o http://localhost:8080/home.html",
+    "connect": "http-server -a localhost -p 8080 dist/ -o http://localhost:8080/home.html"
   },
   "author": "Jeffrey Parrish",
   "license": "MIT",
