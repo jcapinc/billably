@@ -1,0 +1,10 @@
+.days: for day in ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+    .day
+        .head
+            div= day
+            .lock
+                input(type="checkbox" "ng-model"="locked['"+day+"']" name="lock-"+day) 
+                label(for="lock-"+day class="locked-label locked-label-"+day) Locked
+            .value
+                input(type="number" "ng-model"="hours."+day ng-change="lock('"+day+"')")
+        .hours("hours" "data-day"=day day=day)

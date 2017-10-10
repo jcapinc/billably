@@ -1,0 +1,54 @@
+$offwhite:#E8EEFC;
+$brand-primary:#FF6A6A;
+$brand-secondary:#FF4444;
+$brand-light:#FFA6A6;
+
+body{
+  display:flex;
+  flex-direction:row;
+  align-items:stretch;
+  align-content:stretch;
+  height:100vh;
+  width:100vw;
+}
+
+.sidebar{
+  flex: 1 1 250px;
+  min-width:200px;
+  max-width:300px;
+  background-color:$offwhite;
+  max-height:100%;
+}
+.main{ 
+  flex:3 1 75%;
+  min-width:600px;
+  max-height:100%;
+  overflow:auto;
+  input[type=number]{
+    width:100%;
+  }
+  .head{
+    margin-bottom:1vh;
+  }
+  .days{
+    display:flex;
+    flex-direction:row;
+    max-width:100%;
+  }
+  .day{
+    padding:1vw;
+    flex:1 1 calc(100% / 7);
+  }
+  .hours{
+    border:1px solid $brand-secondary;
+    background-color:$brand-light;
+    min-width:60px;
+    resize:vertical;
+    overflow:auto;
+    max-width:100%;
+    min-height:15px;
+  }
+  .locked-label{
+    font-weight:400;
+  }
+}

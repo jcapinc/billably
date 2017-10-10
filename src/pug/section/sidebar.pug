@@ -1,0 +1,9 @@
+.container-fluid
+    .row: .col-md-12
+         h1.brand Billably
+    .row: .col-md-12
+        .target-hours
+            label Total Hours
+            input(type="number" ng-value="dayheight.getTotal(hours)")
+            label Target Hours
+            input(type="number" ng-model="targetHours" ng-change="clearLocked()")

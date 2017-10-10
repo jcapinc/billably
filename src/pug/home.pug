@@ -1,8 +1,10 @@
-h1 does this work?
-h2 How well does this work?
-p well it does not seem to really want to work
-p phoey
-p perhaps now?
-p nay
-    | nor now
-script(type='text/javascript' src='http://localhost:8081/')
+doctype html
+html(ng-app='billably')
+    head
+        title Billably
+        include section/includes
+    body(ng-controller='main')
+        .sidebar
+            include section/sidebar
+        .main
+            include section/main
