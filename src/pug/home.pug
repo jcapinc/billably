@@ -4,7 +4,10 @@ html(ng-app='billably')
         title Billably
         include section/includes
     body(ng-controller='main')
-        .sidebar
-            include section/sidebar
-        .main
-            include section/main
+        .app
+            .sidebar
+                include section/sidebar
+            .main
+                include section/main
+        .status
+            a(href="breadcrumb") ?
