@@ -25,13 +25,13 @@ var billably = (function ($, angular) {
 		this.watchHeight = function (before, after, scope) {
 			var day,selector;
 			
-			service.seekHours.call(service,scope.hours,scope.locked,scope.targetHours);
+			service.seekHours.call(service,scope.hours,scope.locked,scope.hoursHelper.getWeekHours());
 
 			for(var i in daylist){
 				selector = service.hoursElementSelector(daylist[i]);
 				service.setHours(selector,scope.hours[daylist[i]]);
 			}
-		};
+		}; 
 
 		this.seekHours = function(hours,locked,targetHours){
 
@@ -255,7 +255,7 @@ var billably = (function ($, angular) {
 		$scope.days = daylist;
 		$scope.dayheight = dayheight;
 		$scope.targetHours = 40;
-		$scope.efficiency = 0.75;
+		$scope.efficiency = 0.8;
 
 		$scope.hours = setDefaultHours();
 		$scope.locked = setDefaultLocked();
@@ -274,6 +274,7 @@ var billably = (function ($, angular) {
 		
 		$scope.$watch("hours",dayheight.watchHeight,true);
 		$scope.$watch("targetHours",dayheight.watchHeight);
+		$scope.$watch("efficiency",dayheight.watchHeight);
 		
 	}]);
 	//#endregion
